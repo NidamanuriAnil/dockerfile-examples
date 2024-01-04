@@ -12,6 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build Apache
-      working-directory: apache
+      working-directory: httpd
       run: |
-        docker build -t my-ecr-repo/apache .
+        docker build -t my-ecr-repo/httpd .
