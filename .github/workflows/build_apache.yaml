@@ -1,0 +1,17 @@
+name: Build Apache docker image
+
+on:
+  push:
+    branches:
+      - test
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Apache
+      working-directory: apache
+      run: |
+        docker build -t my-ecr-repo/apache .
